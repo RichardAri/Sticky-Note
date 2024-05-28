@@ -17,6 +17,7 @@ body {
     overflow: hidden;
     font-size: 16px;
     line-height: 1.5;
+    color: #000; 
 }
 .stickynote:active {
     cursor: grabbing;

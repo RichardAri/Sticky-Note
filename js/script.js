@@ -8,14 +8,15 @@ let noteCount = 1;
 
 addNoteBtn.addEventListener("click", () => {
     const newNote = document.createElement("div");
-    newNote.className = `box stickynote ${colors[noteCount % colors.length]} captureArea`;
+    newNote.className = `box stickynote ${colors[noteCount % colors.length]}`;
     newNote.style.top = `${noteCount * 30}px`;
     newNote.style.left = `${noteCount * 30}px`;
 
-    const textarea = document.createElement("textarea");
-    textarea.className = "content";
-    textarea.placeholder = "Escribe aquí...";
-    newNote.appendChild(textarea);
+    const contentDiv = document.createElement("div");
+    contentDiv.className = "content";
+    contentDiv.contentEditable = true;
+    contentDiv.placeholder = "Escribe aquí...";
+    newNote.appendChild(contentDiv);
 
     captureArea.appendChild(newNote);
     makeDraggable(newNote);
@@ -47,10 +48,11 @@ function loadNotes() {
             newNote.style.top = noteData.top;
             newNote.style.left = noteData.left;
 
-            const textarea = document.createElement("textarea");
-            textarea.className = "content";
-            textarea.value = noteData.content;
-            newNote.appendChild(textarea);
+            const contentDiv = document.createElement("div");
+            contentDiv.className = "content";
+            contentDiv.contentEditable = true;
+            contentDiv.value = noteData.content;
+            newNote.appendChild(contentDiv);
 
             captureArea.appendChild(newNote);
             makeDraggable(newNote);
