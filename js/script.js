@@ -14,7 +14,6 @@ addNoteBtn.addEventListener("click", () => {
 
     const textarea = document.createElement("textarea");
     textarea.className = "content";
-    //contentDiv.contentEditable = true;
     textarea.placeholder = "Escribe aquí...";
     newNote.appendChild(textarea);
 
@@ -29,8 +28,8 @@ saveBtn.addEventListener("click", () => {
         scale: 2,
     }).then((canvas) => {
         const link = document.createElement("a");
-        link.href = canvas.toDataURL("image/png");
-        link.download = "stickynotes.png";
+        link.href = canvas.toDataURL("image/jpge", 1.0);
+        link.download = "stickynotes.jpg";
         link.click();
     });
 });
@@ -50,7 +49,6 @@ function loadNotes() {
 
             const textarea = document.createElement("textarea");
             textarea.className = "content";
-            //textarea.contentEditable = true;
             textarea.value = noteData.content;
             newNote.appendChild(textarea);
 
