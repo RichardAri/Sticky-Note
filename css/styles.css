@@ -102,8 +102,9 @@ body {
 }
 
 .capture-area {
-    padding-bottom: 20px; /* Ajuste para excluir el toolbar */
+    padding-bottom: 20px;
     position: relative;
     width: 100%;
-    min-height: 100vh; /* Asegura que capture toda la altura visible */
+    min-height: 100vh;
+    background-color: inherit;
 }
