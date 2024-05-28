@@ -12,11 +12,11 @@ addNoteBtn.addEventListener("click", () => {
     newNote.style.top = `${noteCount * 30}px`;
     newNote.style.left = `${noteCount * 30}px`;
 
-    const contentDiv = document.createElement("div");
-    contentDiv.className = "content";
-    contentDiv.contentEditable = true;
-    contentDiv.placeholder = "Escribe aquí...";
-    newNote.appendChild(contentDiv);
+    const textarea = document.createElement("textarea");
+    textarea.className = "content";
+    //contentDiv.contentEditable = true;
+    textarea.placeholder = "Escribe aquí...";
+    newNote.appendChild(textarea);
 
     captureArea.appendChild(newNote);
     makeDraggable(newNote);
@@ -48,11 +48,11 @@ function loadNotes() {
             newNote.style.top = noteData.top;
             newNote.style.left = noteData.left;
 
-            const contentDiv = document.createElement("div");
-            contentDiv.className = "content";
-            contentDiv.contentEditable = true;
-            contentDiv.value = noteData.content;
-            newNote.appendChild(contentDiv);
+            const textarea = document.createElement("textarea");
+            textarea.className = "content";
+            //textarea.contentEditable = true;
+            textarea.value = noteData.content;
+            newNote.appendChild(textarea);
 
             captureArea.appendChild(newNote);
             makeDraggable(newNote);
