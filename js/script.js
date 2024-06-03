@@ -28,10 +28,14 @@ saveBtn.addEventListener("click", () => {
         scale: 2,
     }).then((canvas) => {
         const link = document.createElement("a");
-        link.href = canvas.toDataURL("image/jpeg", 1.0);
+        link.href = canvas.toDataURL("image/jpeg", 2.0);
         link.download = "stickynotes.jpg";
         link.click();
     });
+});
+
+toggleModeBtn.addEventListener("click", () => {
+    body.classList.toggle("light-mode");
 });
 
 toggleModeBtn.addEventListener("click", () => {
