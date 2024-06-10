@@ -3,12 +3,12 @@ const saveBtn = document.getElementById("saveBtn");
 const toggleModeBtn = document.getElementById("toggleModeBtn");
 const captureArea = document.getElementById("captureArea");
 const body = document.body;
-let colors = ["yellow", "blue", "pink", "green"]; //* colores de posits
+let colors = ["yellow", "blue", "pink", "green"]; // posits colors
 let noteCount = 1;
 
 addNoteBtn.addEventListener("click", () => {
     const newNote = document.createElement("div");
-    newNote.className = `box stickynote ${colors[noteCount % colors.length]}`;
+    newNote.className = `box stickynote ${colors[noteCount % colors.length]} captureArea`;
     newNote.style.top = `${noteCount * 30}px`;
     newNote.style.left = `${noteCount * 30}px`;
 
@@ -28,14 +28,10 @@ saveBtn.addEventListener("click", () => {
         scale: 2,
     }).then((canvas) => {
         const link = document.createElement("a");
-        link.href = canvas.toDataURL("image/jpeg", 2.0);
+        link.href = canvas.toDataURL("image/jpeg");
         link.download = "stickynotes.jpg";
         link.click();
     });
-});
-
-toggleModeBtn.addEventListener("click", () => {
-    body.classList.toggle("light-mode");
 });
 
 toggleModeBtn.addEventListener("click", () => {
