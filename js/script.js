@@ -25,7 +25,6 @@ addNoteBtn.addEventListener("click", () => {
 saveBtn.addEventListener("click", () => {
     html2canvas(captureArea, {
         backgroundColor: getComputedStyle(document.body).backgroundColor,
-        scale: 2,
     }).then((canvas) => {
         const link = document.createElement("a");
         link.href = canvas.toDataURL("image/jpeg");
